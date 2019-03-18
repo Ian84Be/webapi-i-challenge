@@ -1,7 +1,9 @@
+const cors = require('cors');
 const express = require('express');
 const server = express();
 
 server.use(express.json()); // this makes POST and PUT work
+server.use(cors());
 
 const db = require('./data/db.js'); // IMPORT the database
 
