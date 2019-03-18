@@ -9,23 +9,25 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.getUsers();
+  }
+
+  getUsers() {
     axios.get('http://localhost:4000/api/users/')
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          users:[...res.data]
-        });
-      })
-      .catch(err => console.log(err));
+    .then(res => {
+      console.log(res.data);
+      this.setState({
+        users:[...res.data]
+      });
+    })
+    .catch(err => console.log(err));
   }
 
   deleteUser = e => {
     axios.delete(`http://localhost:4000/api/users/${e.target.id}`)
       .then(res => {
-        console.log('deleteUser',res)
-        // this.setState({
-        //   users:[...res.data]
-        // });
+        console.log(res.data);
+        this.getUsers();
       })
       .catch(err => console.log(err));
   }
