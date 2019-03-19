@@ -36,4 +36,6 @@ function remove(id) {
   return db('users')
     .where('id', Number(id))
     .del();
+
+  // return db('users');
 }

@@ -1,0 +1,20 @@
+body {
+  background:slateblue;
+}
+
+.App {
+  align-items: center;
+  background:black;
+  color:white;
+  display:flex;
+  flex-direction: column;
+}
+
+.userCard {
+  background: cyan;
+  border:1px solid magenta;
+  color:black;
+  margin:8px;
+  padding:8px;
+  width:200px;
+}
